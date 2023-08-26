@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import { AuthOrHome } from "./auth/AuthOrHome";
+import AccountSettings from "./pages/AccountSettings";
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
-          {/* <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} /> */}
-          <Route path="*" element={<>OH NO</>} />
-        </Route>
+      <Route path="/" element={<AuthOrHome />}/>
+      <Route path="/login" element={<AuthOrHome />} />
+      <Route path="/account" element={<AccountSettings />} />
+      <Route path="*" element={<>OH NO</>} />
       </Routes>
     </BrowserRouter>
   )
