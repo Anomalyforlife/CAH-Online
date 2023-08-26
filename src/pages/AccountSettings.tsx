@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Button,
   Center,
@@ -52,7 +51,6 @@ export default function AccountSettings() {
         <Box w={"100vw"} h={"100vh"} position={"fixed"}>
           <Center h={"100%"}>
             <VStack>
-              <Avatar size={"2xl"} src={avatarURL} />
               <Button onClick={() => openAvatarURL()}>Change Avatar</Button>
               <Button onClick={() => _logout()}>Logout</Button>
               <Button onClick={() => deleteAccount(_auth.currentUser!.uid)}>
