@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   FormControl,
   FormLabel,
@@ -39,16 +40,23 @@ export const LastSteps: FC<{
 export const GetAvatarURL: FC<{
   AvatarURL: string;
   setAvatarURL: React.Dispatch<React.SetStateAction<string>>;
-}> = ({ setAvatarURL, AvatarURL }) => {
+}> = ({ setAvatarURL, AvatarURL }) => {1
   return (
     <Box w="100%">
       <FormControl id="AvatarURL" isRequired>
-        <Text>Enter your Avatar URL</Text>
-        <Text color={"red.500"} fontWeight={"light"} mb={"20px"}>It must end with .png / .gif / .jpg</Text>
+        <HStack>
+        <Box mr={"15px"}>
+        <Text mb={"20px"} fontWeight={"bold"}>Enter your Avatar URL</Text>
+        <Text color={"red.500"} fontWeight={"semibold"}>It must end with .png / .gif / .jpg</Text>
+        </Box>
+        <Box>
+          <Avatar size={"xl"} src={{AvatarURL}.AvatarURL} w={"100%"} left={"40%"}/>
+        </Box>
+        </HStack>
         <HStack>
           <Box w={"100%"}>
             <FormControl id="AvatarURL" isRequired >
-              <FormLabel>AvatarURL</FormLabel>
+              <FormLabel fontSize={"larger"}>AvatarURL</FormLabel>
               <Input
                 value={AvatarURL}
                 onChange={(e) => setAvatarURL(e.target.value)}
